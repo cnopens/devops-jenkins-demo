@@ -11,12 +11,12 @@ pipeline {
 
     environment {
         DOCKER_CREDENTIAL_ID = 'dockerhub-id'
-        GITHUB_CREDENTIAL_ID = 'gitlab-id'
+        GITHUB_CREDENTIAL_ID = 'github-f7443c-2lpjh'
         KUBECONFIG_CREDENTIAL_ID = 'demo-kubeconfig'
         REGISTRY = 'docker.io'
         DOCKERHUB_NAMESPACE = 'icnopens'
-        GIT_ACCOUNT = 'caixiaofeng'
-        APP_NAME = 'ds-springboot-demo'
+        GIT_ACCOUNT = 'cnopens'
+        APP_NAME = 'devops-jenkins-demo'
         SONAR_CREDENTIAL_ID = 'sonar-token'
     }
 
@@ -30,7 +30,7 @@ pipeline {
         stage ('unit test') {
             steps {
                 container ('maven') {
-                    sh 'mvn clean -o -gs `pwd`/configuration/settings.xml test'
+//                     sh 'mvn clean -o -gs `pwd`/configuration/settings.xml test'
                 }
             }
         }
